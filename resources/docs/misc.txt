@@ -26,3 +26,6 @@ CREATE TABLE guestbook
  CREATE USER 'luminus'@'localhost' IDENTIFIED BY 'luminus';
 
 GRANT ALL PRIVILEGES ON *.* TO 'luminus'@'localhost' WITH GRANT OPTION;
+
+
+http://www.luminusweb.net/docs#creating_a_new_application
