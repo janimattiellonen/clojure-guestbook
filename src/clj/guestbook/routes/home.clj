@@ -14,14 +14,15 @@
    (merge {:messages (db/get-messages)}
           (select-keys flash [:name :message :errors]))))
 
-
 (defn about-page []
   (layout/render "about.html"))
 
 (defroutes home-routes
   (GET "/" request (home-page request))
+  (GET "/messages" [] (response/ok (db/get-messages)))
   (POST "/" request (save-message! request))
   (GET "/about" [] (about-page)))
+
 
 (defn validate-message [params]
 	(first
